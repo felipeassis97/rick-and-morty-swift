@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "BDEC2F5B-CBB3-475C-B843-465A56ED23AC"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5BFFF373-5C2A-4B5F-A07D-2C148F2C4D6C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PocViewCode/Services/ClientService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "characters(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5BFFF373-5C2A-4B5F-A07D-2C148F2C4D6C - f4f27baabd1f95b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in PocViewCode.ClientService.shoes(completion: (Swift.Result&lt;Swift.Array&lt;PocViewCode.CharacterInfo&gt;, PocViewCode.ClientErrors&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PocViewCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipe.assis/Projects/personal_projects/PocViewCode/PocViewCode/Services/ClientService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "310">
+               </Location>
+               <Location
+                  uuid = "5BFFF373-5C2A-4B5F-A07D-2C148F2C4D6C - f4f27baabd1f95b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in PocViewCode.ClientService.shoes(completion: (Swift.Result&lt;Swift.Array&lt;PocViewCode.CharacterInfo&gt;, PocViewCode.ClientErrors&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PocViewCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipe.assis/Projects/personal_projects/PocViewCode/PocViewCode/Services/ClientService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "344">
+               </Location>
+               <Location
+                  uuid = "5BFFF373-5C2A-4B5F-A07D-2C148F2C4D6C - f4f27baabd1f95b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in PocViewCode.ClientService.shoes(completion: (Swift.Result&lt;Swift.Array&lt;PocViewCode.CharacterInfo&gt;, PocViewCode.ClientErrors&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PocViewCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipe.assis/Projects/personal_projects/PocViewCode/PocViewCode/Services/ClientService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "296">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9ED5F7EF-68B3-431D-82C5-AA3C5A871E33"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PocViewCode/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "loadCharacters()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE9A2621-E624-43A8-822E-8317DC2F1308"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PocViewCode/Services/NetworkService/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "NetworkService"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB2F8DED-48E8-467A-ACD3-F4AAE93DBCCD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PocViewCode/Features/CharacterList/View/CharacterListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "loadCharacters()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
