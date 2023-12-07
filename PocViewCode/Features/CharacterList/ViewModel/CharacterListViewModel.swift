@@ -15,7 +15,6 @@ class CharacterListViewModel {
         self.repository = repository
     }
     
-    
     func fetchCharacters(completion: @escaping (Result<[CharacterModel], NetworkError>) -> Void){
         repository.getCharacters { result in
             

@@ -66,39 +66,3 @@ class NetworkService: INetworkService {
     }
 }
 
-
-
-
-
-
-
-
-/*class ClientService2 {
-    
-    func characters (completion: @escaping (Result<[CharacterModel], ClientErrors>) -> Void){
-        let session = URLSession.shared
-        guard let url = URL(string: ConfigApp.baseURL) else { return }
-        
-        let task = session.dataTask(with: url) { data, response, error in
-            
-            if (error != nil)  {
-                completion(.failure(.apiError))
-            }
-            
-          if let data = data {
-                do {
-                    print(data)
-                    
-                    let json = try JSONDecoder().decode(ApiResponse.self, from: data)
-                    DispatchQueue.main.async {
-                        completion(.success(json.results))
-                    }
-                } catch {
-                    completion(.failure(.decodeError))
-                }
-            }
-            
-        }
-        task.resume()
-    }
-}*/

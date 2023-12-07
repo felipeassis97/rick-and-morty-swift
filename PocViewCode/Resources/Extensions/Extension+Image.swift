@@ -8,8 +8,6 @@
 import Foundation
 import UIKit
 
-import UIKit
-
 extension UIImageView {
     func loadImage(url: String) {
         guard let imageURL = URL(string: url) else { return }
