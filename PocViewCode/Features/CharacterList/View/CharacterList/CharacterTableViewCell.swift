@@ -60,12 +60,12 @@ class CharacterTableViewCell :  UITableViewCell {
     }()
     
     private lazy var characterImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        imageView.layer.cornerRadius = 10
-        imageView.layer.masksToBounds = true
-        return imageView
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleAspectFit
+        image.layer.cornerRadius = 8
+        image.layer.masksToBounds = true
+        return image
     }()
     
     private lazy var stackView: UIStackView = {

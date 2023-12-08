@@ -35,3 +35,14 @@ extension UIImageView {
     }
 }
 
+extension UIImageView {
+
+    func setRounded(anyImage: UIImage) {
+        self.contentMode = .scaleAspectFill
+            self.layer.cornerRadius = self.frame.height / 2
+            self.layer.masksToBounds = false
+            self.clipsToBounds = true
+
+    }
+}
+

@@ -22,7 +22,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //Remove as referencias do storey board e inicializa a aplicação de forma programática
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = CharacterListViewController()
+        
+        let viewController = CharacterListViewController()
+        
+        window?.rootViewController =  UINavigationController.customTopBar(rootViewController: viewController)
         window?.makeKeyAndVisible()
     }
 

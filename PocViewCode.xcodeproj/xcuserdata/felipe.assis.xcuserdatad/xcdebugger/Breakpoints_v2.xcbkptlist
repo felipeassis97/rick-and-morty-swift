@@ -109,9 +109,89 @@
             filePath = "PocViewCode/Features/CharacterList/View/CharacterListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "loadCharacters()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "17CF004A-790E-4A49-8A49-C20111CD44FB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PocViewCode/Features/CharacterList/View/CharacterDetails/CharacterDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "characterDetails"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96D47B6B-E451-47DB-8F98-B9952DFC6D8C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PocViewCode/Features/CharacterList/View/CharacterDetails/CharacterDetailsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "init(character:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "96D47B6B-E451-47DB-8F98-B9952DFC6D8C - 3416ca763eed185b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PocViewCode.CharacterDetailsView.init(character: Swift.Optional&lt;PocViewCode.CharacterModel&gt;) -&gt; PocViewCode.CharacterDetailsView"
+                  moduleName = "PocViewCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipe.assis/Projects/personal_projects/PocViewCode/PocViewCode/Features/CharacterList/View/CharacterDetails/CharacterDetailsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "612">
+               </Location>
+               <Location
+                  uuid = "96D47B6B-E451-47DB-8F98-B9952DFC6D8C - 3416ca763eed185b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PocViewCode.CharacterDetailsView.init(character: Swift.Optional&lt;PocViewCode.CharacterModel&gt;) -&gt; PocViewCode.CharacterDetailsView"
+                  moduleName = "PocViewCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipe.assis/Projects/personal_projects/PocViewCode/PocViewCode/Features/CharacterList/View/CharacterDetails/CharacterDetailsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "672">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "509262FC-1CCB-45B5-A48C-1F957C3E89B4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PocViewCode/Features/CharacterList/View/CharacterDetails/CharacterDetailsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "init(character:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
