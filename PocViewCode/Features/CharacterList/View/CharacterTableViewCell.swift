@@ -49,13 +49,13 @@ class CharacterTableViewCell :  UITableViewCell {
     private lazy var characterNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.font = .poppinsFont(type: .semiBold, size: 16)
         return label
     }()
     
     private lazy var characterGenderLabel : UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+        label.font = .poppinsFont(type: .light, size: 14)
         return label
     }()
     

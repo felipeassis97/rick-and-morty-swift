@@ -47,6 +47,9 @@ class CharacterListViewController: UIViewController {
         }
     }
     
+    
+    private lazy var topBar: UI
+    
     private lazy var listView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
