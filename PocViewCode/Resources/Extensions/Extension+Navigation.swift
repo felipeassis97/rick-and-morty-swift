@@ -16,15 +16,15 @@ extension UINavigationController {
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .purple
-        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.purple]
         appearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont.poppinsFont(type: .semiBold, size: 20)]
 
-
+        
+        navigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.purple]
         navigation.navigationBar.scrollEdgeAppearance = appearance
         navigation.navigationBar.standardAppearance = appearance
         navigation.navigationController?.navigationBar.compactAppearance = appearance
-        navigation.navigationController?.navigationBar.tintColor = .white
+        navigation.navigationController?.navigationBar.tintColor = .purple
         navigation.navigationBar.barTintColor = .white
         
         return navigation

@@ -19,7 +19,7 @@ class NetworkService: INetworkService {
             completion(.failure(.invalidURL))
             return
         }
-        
+                
         let task = session.dataTask(with: url) { data, response, error in
             if error != nil {
                 completion(.failure(.apiError))

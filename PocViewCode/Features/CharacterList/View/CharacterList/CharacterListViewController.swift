@@ -7,9 +7,14 @@
 
 import UIKit
 
+
+
+
 class CharacterListViewController: UIViewController {
     
     private let viewModel: CharacterListViewModel
+    private let refreshControll = UIRefreshControl()
+    
     var characterList : [CharacterModel]?
     
     init(_ viewModel:CharacterListViewModel = CharacterListViewModel()){
@@ -29,17 +34,88 @@ class CharacterListViewController: UIViewController {
     private func setupView() {
         view.backgroundColor = .white
         view.addSubview(listView)
+        listView.addSubview(loading)
+        customRefreshIndicator()
         setupConstraints()
         loadCharacters()
-        setupTopBar()
+        setupSearch()
     }
     
-    func setupTopBar() {
-        self.navigationItem.titleView = logo
-        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, image: UIImage(systemName: "goforward"), target: self, action: #selector(onTapBack))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: backButton)
+    private func setupConstraints(){
+        NSLayoutConstraint.activate([
+            listView.topAnchor.constraint(equalTo: view.topAnchor, constant: 16),
+            listView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            listView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            listView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            loading.centerXAnchor.constraint(equalTo: listView.centerXAnchor),
+            loading.centerYAnchor.constraint(equalTo: listView.centerYAnchor),
+        ])
     }
     
+
+    func customRefreshIndicator() {
+        refreshControll.tintColor = .purple
+        refreshControll.attributedTitle = NSAttributedString(string: "Reloading characters")
+    }
+    
+    @objc private func reloadButton() {
+        handleRefreshControl()
+    }
+    
+    @objc func handleRefreshControl() {
+        refreshControll.beginRefreshing()
+        self.viewModel.fetchCharacters { [weak self] result in
+            switch result {
+            case .success(let characters):
+                self?.characterList = characters
+                self?.listView.reloadData();
+                self?.refreshControll.endRefreshing()
+                break
+            case .failure(let error):
+                print(error)
+                self?.refreshControll.endRefreshing()
+                break
+            }
+        }
+    }
+    
+    func loadCharacters(){
+        loading.startAnimating()
+        self.viewModel.fetchCharacters { [weak self] result in
+            switch result {
+            case .success(let characters):
+                self?.characterList = characters
+                self?.listView.reloadData();
+                break
+            case .failure(let error):
+                print("ERROR: \(error)")
+                self?.listView.reloadData();
+                break
+            }
+        }
+        loading.stopAnimating()
+    }
+    
+    func loadCharactersByName(name: String) {
+        loading.startAnimating()
+        self.viewModel.fetchCharactersByName(name: name) { [weak self] result in
+            switch result {
+            case .success(let characters):
+                self?.characterList = characters
+                self?.listView.reloadData();
+                break
+            case .failure(let error):
+                print("HERE: \(error)")
+                self?.characterList = []
+                self?.listView.reloadData();
+                break
+            }
+        }
+        loading.stopAnimating()
+    }
+    
+    // MARK: Components
     private lazy var backButton: UIButton = {
         let button = UIButton(type: .system)
         let image = UIImage(systemName: "goforward")
@@ -49,32 +125,12 @@ class CharacterListViewController: UIViewController {
         return button
     }()
     
-    @objc
-    private func reloadButton() {
-        loadCharacters()
-    }
-    
-    func loadCharacters(){
-        self.viewModel.fetchCharacters { [weak self] result in
-            switch result {
-            case .success(let characters):
-                self?.characterList = characters
-                self?.listView.reloadData();
-                break
-            case .failure(let error):
-                print(error)
-                break
-            }
-        }
-    }
-
     private lazy var logo: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(named: "logo")
-        image.contentMode = .scaleToFill
-        image.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        image.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        image.contentMode = .scaleAspectFit
+        image.heightAnchor.constraint(equalToConstant: 32).isActive = true
         return image
     }()
     
@@ -86,24 +142,40 @@ class CharacterListViewController: UIViewController {
         tableView.delegate = self
         tableView.register(CharacterTableViewCell.self,
                            forCellReuseIdentifier: CharacterTableViewCell.identifier)
+        tableView.refreshControl = refreshControll
+        tableView.refreshControl?.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
         return tableView
     }()
-    
-    private func setupConstraints(){
-        NSLayoutConstraint.activate([
-            listView.topAnchor.constraint(equalTo: view.topAnchor, constant: 16),
-            listView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            listView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            listView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        ])
-    }
     
     private lazy var loading: UIActivityIndicatorView = {
         let progress = UIActivityIndicatorView(style: .large)
         progress.translatesAutoresizingMaskIntoConstraints = false
+        progress.center = view.center
         progress.hidesWhenStopped = true
+        progress.color = .purple
         return progress
     }()
+    
+    // MARK: Search characters
+    private let searchController = UISearchController(searchResultsController: nil)
+    private func setupSearch() {
+        self.searchController.searchResultsUpdater = self
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        self.searchController.hidesNavigationBarDuringPresentation = true
+        
+        self.searchController.searchBar.delegate = self
+        self.searchController.searchBar.placeholder = "Search characters"
+        self.searchController.searchBar.showsBookmarkButton = true
+        self.searchController.searchBar.tintColor = .systemGreen
+        self.searchController.searchBar.barTintColor = .systemGreen
+                
+        self.searchController.searchBar.setImage(UIImage(systemName: "line.horizontal.3.decrease"), for: .bookmark, state: .normal)
+        self.navigationItem.titleView = logo
+        self.navigationItem.searchController = searchController
+        self.definesPresentationContext = false
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+
+    }
 }
 
 extension CharacterListViewController: UITableViewDataSource, UITableViewDelegate {
@@ -130,8 +202,28 @@ extension CharacterListViewController: UITableViewDataSource, UITableViewDelegat
         let characterIndex = characterList?[indexPath.row]
         let controller = CharacterDetailsViewController()
         controller.character = characterIndex
-    
+        
         self.navigationController?.pushViewController(controller, animated: false)
     }
+    
+    
 }
+
+extension CharacterListViewController: UISearchResultsUpdating, UISearchBarDelegate {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let query = searchController.searchBar.text, !query.isEmpty else { return }
+        loadCharactersByName(name: query)
+    }
+    
+    func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
+        loadCharacters()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        loadCharacters()
+    }
+}
+
+
+
 

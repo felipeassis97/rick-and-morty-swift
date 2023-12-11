@@ -9,6 +9,7 @@ import Foundation
 
 protocol ICharactersRepository {
     func getCharacters(completion: @escaping (Result<CharactersResponseModel<CharacterModel>, NetworkError>) -> Void)
+    func getCharactersByName(name: String, completion: @escaping (Result<CharactersResponseModel<CharacterModel>, NetworkError>) -> Void)
 }
 
 class CharactersRepository : ICharactersRepository {
@@ -20,5 +21,10 @@ class CharactersRepository : ICharactersRepository {
     
     func getCharacters(completion: @escaping (Result<CharactersResponseModel<CharacterModel>, NetworkError>) -> Void) {
         client.get(path:  "/character", type: CharactersResponseModel<CharacterModel>.self, completion: completion)
+    }
+    
+    func getCharactersByName(name: String, completion: @escaping (Result<CharactersResponseModel<CharacterModel>, NetworkError>) -> Void) {
+        client.get(path:  "/character/?name=\(name)", type: CharactersResponseModel<CharacterModel>.self, completion: completion)
+
     }
 }

@@ -59,9 +59,9 @@ class CharacterDetailsView: UIView {
     private lazy var characterImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleAspectFill
         image.layer.masksToBounds = false
-        image.layer.cornerRadius = image.frame.size.width / 2
+        image.layer.cornerRadius = 10
         image.clipsToBounds = true
         return image
     }()

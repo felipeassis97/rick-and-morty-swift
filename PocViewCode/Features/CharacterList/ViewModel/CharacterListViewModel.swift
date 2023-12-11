@@ -32,4 +32,22 @@ class CharacterListViewModel {
             
         }
     }
+    
+    func fetchCharactersByName(name: String, completion: @escaping (Result<[CharacterModel], NetworkError>) -> Void){
+        repository.getCharactersByName(name: name) { result in
+            
+            switch result {
+            case .success(let list):
+                self.characters = list.results
+                completion(.success(list.results))
+                break
+                
+            case .failure(let error):
+                self.characters = nil
+                completion(.failure(error))
+                break
+            }
+            
+        }
+    }
 }
